@@ -22,3 +22,4 @@ model = st("bert-base-nli-mean-tokens")
 openai.api_key = "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"
 keys = ["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","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"]
 sys.path.append('/')
+print('Test')
