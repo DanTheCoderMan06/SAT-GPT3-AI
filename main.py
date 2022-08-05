@@ -1,24 +1,26 @@
+import logging
+import threading
+import time
+import re
 import json
 import pandas as pd
+import time
 import sys
 import os
 from functions import *
 import math
+import time
+import statsmodels.formula.api as sm
 import random
 import numpy as np
 import matplotlib as plt
 import scipy
+import scipy.stats
 import openai
 import statistics
 from fractions import Fraction
 from sentence_transformers import SentenceTransformer as st
-import logging
-import threading
-import time
-#Importing All of the functions
 model = st("bert-base-nli-mean-tokens")
-openai.api_key = "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"
-keys = ["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","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"]
 from functions import *
 sample_size = 1
 keys = ["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","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"]
@@ -80,3 +82,10 @@ from scipy.stats import ttest_ind
 marr = distanceframe[distanceframe['type'] == 'addition'].distance.values
 sarr = distanceframe[distanceframe['type'] == 'subtraction'].distance.values
 ttest_ind(marr,sarr)
+distances = pd.read_csv('data/distances2.csv')
+question = distances.iloc[0]
+distances['averagenumsize'] = distances.question.apply(get_avg_numbers)
+distances.to_csv('data/distances2.csv')
+#Prints Graphs of Resulting Data
+distances.plot.scatter(x='averagenumsize',y='distance')
+#Shows the Relationship between The Similarity between GPT-3's answer and the Actual answer based on the step and type.
