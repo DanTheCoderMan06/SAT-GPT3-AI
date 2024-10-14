@@ -11,3 +11,5 @@ You have to download the ZIP Version and extract it to your desktop. Afterwords 
 ![Alt text](https://i.imgur.com/TUqonvv.png)
 ![Alt text](https://i.imgur.com/NKbjQFK.png)
 ![Alt text](https://i.imgur.com/0K67EgN.png)
+# NOTE
+This is now defunct due to GPT-3 support being removed from OpenAIs platform.
