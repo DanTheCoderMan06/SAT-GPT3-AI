@@ -23,7 +23,7 @@ from sentence_transformers import SentenceTransformer as st
 model = st("bert-base-nli-mean-tokens")
 from functions import *
 sample_size = 1
-keys = ["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","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"]
+keys = []
 names = []
 #The Variables for the Program, make sure you have a folder named files under the parent of this .py file.
 df = pd.read_csv('data/Indian-Male-Names.csv')['name']
